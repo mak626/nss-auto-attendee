@@ -6,7 +6,7 @@ const parseAttendance = async (events, years, participants) => {
   const total = Object.keys(events).length;
   for (const event of events) {
     const count = `${index}/${total}`;
-    console.log(`${count}: Fetching attendees for ${event.name}`.blue.bold);
+    console.log(`${count}: Fetching attendees: ${event.name}`.blue.bold);
     let attendance = {};
     await Promise.all(
       years.map(async (year) => {
@@ -27,9 +27,7 @@ const parseAttendance = async (events, years, participants) => {
         hours: attendance[e] === true ? event.hours : 0,
       });
     });
-    console.log(
-      `${count}: Done Fetching attendees for ${event.name}`.green.bold
-    );
+    console.log(`${count}: Done Fetching attendees: ${event.name}`.green.bold);
     fs.writeFileSync(
       "./temp/attendees.json",
       JSON.stringify(participants, null, 4)

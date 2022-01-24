@@ -8,5 +8,6 @@ const api = axios.create({
     "Content-Type": "application/x-www-form-urlencoded",
   },
 });
+const pageLimit = 5000;
 
-module.exports = { api };
+module.exports = { api, pageLimit };

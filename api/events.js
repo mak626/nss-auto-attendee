@@ -1,13 +1,13 @@
 const { parse } = require("node-html-parser");
 const fs = require("fs");
-const { api } = require(".");
+const { api, pageLimit } = require(".");
 
 const getEvent = async (year) => {
   const res = await api.post(
     "/activity/o_change",
     new URLSearchParams({
       act_year_s: year,
-      per_page_count: "500",
+      per_page_count: pageLimit,
     })
   );
 

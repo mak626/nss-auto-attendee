@@ -1,12 +1,12 @@
 const { parse } = require("node-html-parser");
 const fs = require("fs");
-const { api } = require(".");
+const { api, pageLimit } = require(".");
 
 const getVolunteers = async () => {
   console.log("Getting volunteers....".blue.bold);
   const res = await api.post(
     "/volunteer/officer_change",
-    new URLSearchParams({ per_page_count: "500" })
+    new URLSearchParams({ per_page_count: pageLimit })
   );
 
   const root = parse(res.data);
