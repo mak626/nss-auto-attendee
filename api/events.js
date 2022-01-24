@@ -23,9 +23,9 @@ const getEvent = async (year) => {
     );
     return {
       id,
-      name: values[1].innerText.trim(),
-      hours: Number.parseInt(values[8].innerText.trim(), 10),
-      date: values[9].innerText.trim(),
+      name: values[1].textContent.trim(),
+      hours: Number.parseInt(values[8].textContent.trim(), 10),
+      date: values[9].textContent.trim(),
     };
   });
 
@@ -60,10 +60,10 @@ const getEvents = async (years) => {
   await Promise.all(
     years.map(
       (e) =>
-        new Promise(async (res, rej) => {
+        new Promise(async (resolve) => {
           const data = await getEvent(e);
           total.push(...data);
-          return res(data);
+          return resolve(data);
         })
     )
   );

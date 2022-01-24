@@ -14,9 +14,9 @@ const getVolunteers = async () => {
     const values = e.querySelectorAll("td");
     return {
       id: Number.parseInt(values[2].getAttribute("id").trim(), 10),
-      name: values[2].childNodes[4].innerText.trim(),
-      registrationId: values[6].innerText.trim(),
-      enrollmentId: Number.parseInt(values[7].innerText.trim()),
+      name: values[2].childNodes[4].textContent.trim(),
+      registrationId: values[6].textContent.trim(),
+      enrollmentId: Number.parseInt(values[7].textContent.trim()),
     };
   });
 
