@@ -1,5 +1,6 @@
 const { getEventParticipants } = require("./events");
 const fs = require("fs");
+require("colors");
 
 const parseAttendance = async (events, years, participants) => {
   let index = 1;

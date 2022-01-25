@@ -10,9 +10,11 @@ Install node packages using `npm i`
 
 `UNITNO`
 
-`TOKEN`
-
 `BASEURL`
+
+`USER_NAME`
+
+`PASSWORD`
 
 ## Usage
 
