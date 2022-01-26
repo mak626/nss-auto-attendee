@@ -23,7 +23,7 @@ function generateCsv(time, attendees) {
       events.forEach((e) => array.push(e.hours));
 
       if (!flag) {
-        events.forEach((e) => header.push(e.name));
+        events.forEach((e) => header.push(e.name.replace(/,/g, " ")));
         flag = true;
       }
       return array.join(",");
